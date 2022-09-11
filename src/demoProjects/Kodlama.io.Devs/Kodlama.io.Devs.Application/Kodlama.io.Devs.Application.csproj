@@ -13,11 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Features\ProgrammingLanguages\Commands\" />
 	  <Folder Include="Features\ProgrammingLanguages\Constants\" />
-	  <Folder Include="Features\ProgrammingLanguages\Models\" />
-	  <Folder Include="Features\ProgrammingLanguages\Queries\" />
-	  <Folder Include="Features\ProgrammingLanguages\Profiles\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Domain.Entities
 {
-    public class ProgrammingLanguage: Entity
+    public class ProgrammingLanguage : Entity
     {
         public string Name { get; set; }
 
         public ProgrammingLanguage() { }
 
-            public ProgrammingLanguage(int id, string name)
+        public ProgrammingLanguage(int id, string name)
         {
             Id = id;
             Name = name;

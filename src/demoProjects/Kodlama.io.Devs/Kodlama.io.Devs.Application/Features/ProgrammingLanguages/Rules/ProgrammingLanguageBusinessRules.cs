@@ -25,6 +25,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Rules
             if (result.Items.Any()) throw new BusinessException("Programming Language name exists.");
         }
 
+        public async Task ProgrammingLanguageNameCanNotBeDuplicatedWhenUpdated(string name)
+        {
+            IPaginate<ProgrammingLanguage> result = await _programmingLanguageRepository.GetListAsync(p => p.Name == name);
+            if (result.Items.Any()) throw new BusinessException("Programming Language name exists.");
+        }
+
         public void ProgrammingLanguageShouldExistWhenRequested(ProgrammingLanguage programmingLanguage)
         {
             if (programmingLanguage == null) throw new BusinessException("Requested programming language does not exists.");
