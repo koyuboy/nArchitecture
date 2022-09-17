@@ -10,13 +10,6 @@ namespace Kodlama.io.Devs.Domain.Entities
 {
     public class Member: User
     {
-        public virtual ICollection<GithubAccount> GithubAccounts { get; set; }
-        public Member()
-        {
-        }
-
-        public Member(int id, string firstName, string lastName, string email, byte[] passwordSalt, byte[] passwordHash, bool status, AuthenticatorType authenticatorType) : base(id, firstName, lastName, email, passwordSalt, passwordHash, status, authenticatorType)
-        {
-        }
+        public virtual GithubAccount GithubAccount { get; set; }
     }
 }

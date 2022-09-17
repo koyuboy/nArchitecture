@@ -117,7 +117,7 @@ namespace Kodlama.io.Devs.Persistence.Contexts
             modelBuilder.Entity<Member>(p =>
             {
                 p.ToTable("Members");
-                p.HasMany(p => p.GithubAccounts);
+                p.HasOne(p => p.GithubAccount);
             });
 
 
