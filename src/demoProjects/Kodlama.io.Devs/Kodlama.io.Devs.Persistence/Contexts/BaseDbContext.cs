@@ -17,7 +17,8 @@ namespace Kodlama.io.Devs.Persistence.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
-
+        public DbSet<Member> Members { get; set; }
+        public DbSet<GithubAccount> GithubAccounts { get; set; }
 
 
         //Entities
@@ -112,6 +113,22 @@ namespace Kodlama.io.Devs.Persistence.Contexts
             Technology[] technologyEntitySeeds = { new(1, 2, "Spring"), new(2, 1, "WPF") };
             modelBuilder.Entity<Technology>().HasData(technologyEntitySeeds);
 
+
+            modelBuilder.Entity<Member>(p =>
+            {
+                p.ToTable("Members");
+                p.HasMany(p => p.GithubAccounts);
+            });
+
+
+            modelBuilder.Entity<GithubAccount>(p =>
+            {
+                p.ToTable("GithubAccounts").HasKey(k => k.Id);
+                p.Property(p => p.Id).HasColumnName("Id");
+                p.Property(p => p.MemberId).HasColumnName("MemberId");
+                p.Property(p => p.GithubLink).HasColumnName("GithubLink");
+                p.HasOne(p => p.Member);
+            });
 
         }
     }
