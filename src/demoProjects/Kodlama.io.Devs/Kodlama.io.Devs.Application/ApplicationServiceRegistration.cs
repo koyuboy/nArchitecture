@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Kodlama.io.Devs.Application.Features.Members.Rules;
 using Kodlama.io.Devs.Application.Features.Technologies.Rules;
 
 namespace Kodlama.io.Devs.Application
@@ -23,6 +24,7 @@ namespace Kodlama.io.Devs.Application
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<TechnologyBusinessRules>();
+            services.AddScoped<MemberBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
