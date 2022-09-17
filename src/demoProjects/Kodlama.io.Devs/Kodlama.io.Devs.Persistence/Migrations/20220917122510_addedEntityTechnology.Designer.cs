@@ -3,6 +3,7 @@ using Kodlama.io.Devs.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kodlama.io.Devs.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220917122510_addedEntityTechnology")]
+    partial class addedEntityTechnology
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,39 +58,22 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProgrammingLanguageId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProgrammingLanguageId");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProgrammingLanguageId");
 
-                    b.ToTable("Technologies", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Spring",
-                            ProgrammingLanguageId = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "WPF",
-                            ProgrammingLanguageId = 1
-                        });
+                    b.ToTable("Technology");
                 });
 
             modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.Technology", b =>
