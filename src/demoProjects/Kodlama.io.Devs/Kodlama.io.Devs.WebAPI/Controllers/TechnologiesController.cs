@@ -4,6 +4,8 @@ using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Dtos;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Models;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetListProgrammingLanguage;
 using Kodlama.io.Devs.Application.Features.Technologies.Commands.CreateTechnology;
+using Kodlama.io.Devs.Application.Features.Technologies.Commands.DeleteTechnology;
+using Kodlama.io.Devs.Application.Features.Technologies.Commands.UpdateTechnology;
 using Kodlama.io.Devs.Application.Features.Technologies.Dtos;
 using Kodlama.io.Devs.Application.Features.Technologies.Queries.GetByIdTechnology;
 using Kodlama.io.Devs.Application.Features.Technologies.Queries.GetListTechnology;
@@ -35,6 +37,20 @@ namespace Kodlama.io.Devs.WebAPI.Controllers
         public async Task<IActionResult> GetById([FromRoute] GetByIdTechnologyQuery getByIdTechnologyQuery)
         {
             var  result = await Mediator.Send(getByIdTechnologyQuery);
+            return Ok(result);
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> Delete([FromRoute] DeleteTechnologyCommand deleteTechnologyCommand)
+        {
+            var result = await Mediator.Send(deleteTechnologyCommand);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateTechnologyCommand updateTechnologyCommand)
+        {
+            var result = await Mediator.Send(updateTechnologyCommand);
             return Ok(result);
         }
     }

@@ -12,6 +12,7 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.CreateTechn
         public CreateTechnologyCommandValidator()
         {
             RuleFor(c => c.Name).NotEmpty();
+            RuleFor(c => c.ProgramminglanguageId).NotEmpty();
         }
     }
 }
