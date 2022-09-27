@@ -23,7 +23,7 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetL
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
             private readonly IMapper _mapper;
 
-            public GetListProgrammingLanguageQueryHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageBusinessRules)
+            public GetListProgrammingLanguageQueryHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

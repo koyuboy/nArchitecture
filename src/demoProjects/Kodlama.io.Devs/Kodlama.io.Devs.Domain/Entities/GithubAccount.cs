@@ -10,7 +10,7 @@ namespace Kodlama.io.Devs.Domain.Entities
     public class GithubAccount: Entity
     {
         public int MemberId { get; set; }
-        public string GithubLink { get; set; }
+        public string ProfileUrl { get; set; }
         public virtual Member Member { get; set; }
 
         public GithubAccount()
@@ -18,11 +18,11 @@ namespace Kodlama.io.Devs.Domain.Entities
 
         }
 
-        public GithubAccount(int id, int memberId, string githubLink) : base(id)
+        public GithubAccount(int id, int memberId, string profileUrl) : base(id)
         {
             Id = id;
             MemberId = memberId;
-            GithubLink = githubLink;
+            ProfileUrl = profileUrl;
         }
 
     }

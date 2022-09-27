@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Kodlama.io.Devs.Application.Features.GithubAccounts.Rules;
 using Kodlama.io.Devs.Application.Features.Members.Rules;
 using Kodlama.io.Devs.Application.Features.Technologies.Rules;
 
@@ -22,9 +23,10 @@ namespace Kodlama.io.Devs.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<ProgrammingLanguageBusinessRules>();
+            services.AddScoped<GithubAccountsBusinessRules>();
             services.AddScoped<TechnologyBusinessRules>();
             services.AddScoped<MemberBusinessRules>();
+            services.AddScoped<ProgrammingLanguageBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

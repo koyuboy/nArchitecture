@@ -16,6 +16,7 @@
 	  <Folder Include="Features\Members\Constants\" />
 	  <Folder Include="Features\Members\Models\" />
 	  <Folder Include="Features\Members\Queries\" />
+	  <Folder Include="Features\GithubAccounts\Constants\" />
 	  <Folder Include="Features\Technologies\Constants\" />
 	  <Folder Include="Features\ProgrammingLanguages\Constants\" />
 	</ItemGroup>

@@ -126,7 +126,7 @@ namespace Kodlama.io.Devs.Persistence.Contexts
                 p.ToTable("GithubAccounts").HasKey(k => k.Id);
                 p.Property(p => p.Id).HasColumnName("Id");
                 p.Property(p => p.MemberId).HasColumnName("MemberId");
-                p.Property(p => p.GithubLink).HasColumnName("GithubLink");
+                p.Property(p => p.ProfileUrl).HasColumnName("ProfileUrl");
                 p.HasOne(p => p.Member);
             });
 
